@@ -51,7 +51,6 @@ export const MainPage = () => {
                 inputField.current!.value = stack[stackIndex.current];
             }
         }
-
     };
 
     return (

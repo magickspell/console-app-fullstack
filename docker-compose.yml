@@ -1,0 +1,39 @@
+services:
+
+  mongo:
+    image: mongo:6.0.3
+    restart: always
+    ports:
+      - "27117:27017"
+    volumes:
+      - ./temp/db:/data/db
+    logging:
+      driver: none
+
+
+  app-be-dev:
+    image: node:18.12.0
+    volumes:
+      - ./be:/usr/src/app
+    working_dir: /usr/src/app
+    command: bash -c "npm install && npm dedupe && npm run dev"
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo
+    profiles:
+      - dev
+
+
+  app-fe-dev:
+    image: node:18.12.0
+    volumes:
+      - ./fe:/usr/src/app
+    working_dir: /usr/src/app
+    command: bash -c "npm install && npm start"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - app-be-dev
+    profiles:
+      - dev

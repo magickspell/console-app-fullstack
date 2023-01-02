@@ -3,3 +3,5 @@
 /fe/node_modules
 /be/build
 /fe/build
+/temp
+/nginx

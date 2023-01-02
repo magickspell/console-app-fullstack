@@ -13,10 +13,9 @@ Reqs: Node.js version 18 or Docker.
 #### How to start local:
 
 1) `git clone`
-2) `npm i` from be and fe folder.
-3) `npm run-script start` from fe and be folder.
-* you can run `npm dev`
-* or `docker-compose up` from root.
+2) `docker run --name mongo6 -d -p 27017:27017 mongo:6.0.3`
+3) `npm i` from be and fe folder.
+4) `npm run-script start` from fe and be folder.
 
 #### App listen ports in dev by default:
 1) font end:  3000
