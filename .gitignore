@@ -3,4 +3,8 @@
 /fe/node_modules
 /be/build
 /fe/build
+/be/package-lock.json
+/fe/package-lock.json
+/package-lock.json
+/node_modules
 /temp

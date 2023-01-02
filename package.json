@@ -1,0 +1,23 @@
+{
+  "name": "consolecarsexpressreact",
+  "version": "1.0.0",
+  "description": "This is fullstack app that can store and operate with cars database via client console.",
+  "main": "",
+  "scripts": {
+    "dev-comment": "echo you can run app from root folder, after installation of all folders, from here",
+    "dev": "concurrently \"npm --prefix ./be run dev\"  \"npm --prefix ./fe run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magickspell/console-app-fullstack.git"
+  },
+  "author": "magickspell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magickspell/console-app-fullstack/issues"
+  },
+  "homepage": "https://github.com/magickspell/console-app-fullstack#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

@@ -18,7 +18,7 @@ https://nodejs.org/en/download/package-manager/
 1) `git clone`
 2) `docker run --name mongo6 -d -p 27017:27017 mongo:6.0.3`
 3) `npm i` from be and fe folder.
-4) `npm run-script start` from fe and be folder.
+4) `npm run-script start` from fe and be folder <br> or <br> `npm run-script dev` from root.
 5) open http://localhost:3000 in browser.
 * you can use docker compose to run app:
 ```

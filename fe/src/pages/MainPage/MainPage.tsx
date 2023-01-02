@@ -8,7 +8,7 @@ export const MainPage = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [commandsStack, setCommandsStack] = useState<string[]>([
         "Are you winning son? - No dad i'm coding.",
-        '(type "--help" to get help)',
+        '(type "help" to get help)',
         'use arrow up and down to use past commands',
         '...'
     ]);
