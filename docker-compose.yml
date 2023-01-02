@@ -6,7 +6,7 @@ services:
     ports:
       - "27117:27017"
     volumes:
-      - ./temp/db:/data/db
+      - ./temp/data/db:/data/db
     logging:
       driver: none
 
@@ -16,7 +16,7 @@ services:
     volumes:
       - ./be:/usr/src/app
     working_dir: /usr/src/app
-    command: bash -c "npm install && npm dedupe && npm run dev"
+    command: bash -c "npm install && npm dedupe && MONGO_HOST=mongo:27017 npm run dev"
     ports:
       - "3001:3001"
     depends_on:

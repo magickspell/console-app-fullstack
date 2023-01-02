@@ -10,17 +10,18 @@ dotenv.config();*/
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const PORT: number = 3001; // variables can be passed like this - process.env.PORT; (but I use static here, because docker)
+const MONGO_HOST: string = process.env.MONGO_HOST ? process.env.MONGO_HOST : 'localhost:27017';
 const app: Express = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(router);
 
-mongoose.connect('mongodb://localhost:27017/console-cars').then(() => {
+mongoose.connect(`mongodb://${MONGO_HOST}/console-cars`).then(() => {
     console.log('[server]: MongoDB connected');
     MigrateCars();
 }).catch((e) => {
-    console.log(`[error]: ${e}`)
+    console.log(`[error]: failed to connect to "${MONGO_HOST}"\n${e}`)
 });
 
 app.listen(PORT, () => {
