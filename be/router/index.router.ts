@@ -1,6 +1,7 @@
 import express from 'express';
+import ApiRouter from "./api/root.router";
 
-const router = express.Router();
-router.use('/api', require('./api'));
+const AppRouter = express.Router();
+AppRouter.use('/api', ApiRouter);
 
-export default {appRouter: router};
+export default AppRouter;

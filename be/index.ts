@@ -1,7 +1,7 @@
 import express, {Express} from 'express';
 import mongoose from 'mongoose';
-import router from "./router/api/cars.router";
 import {MigrateCars} from "./migration/cars.migration";
+import AppRouter from "./router/index.router";
 
 // App could be created with free mongodb and injected credentials via dotenv (or just ENV) library, but I used docker.
 /*import dotenv from 'dotenv';
@@ -15,7 +15,7 @@ const app: Express = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(router);
+app.use(AppRouter);
 
 mongoose.connect(`mongodb://${MONGO_HOST}/console-cars`).then(() => {
     console.log('[server]: MongoDB connected');
@@ -27,3 +27,5 @@ mongoose.connect(`mongodb://${MONGO_HOST}/console-cars`).then(() => {
 app.listen(PORT, () => {
     console.log(`[server]: Server is running at http://localhost:${PORT}`);
 });
+
+export default app;
